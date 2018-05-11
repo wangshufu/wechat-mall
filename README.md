@@ -16,9 +16,9 @@
 
 #### Preview
 
-<img src="screenshots/home.png" width = "40%"/> <img src="screenshots/good01.png" width = "40%"/> 
+<img src="screenshots/home.png" width = "40%"/> <img src="screenshots/my.png" width = "40%"/> 
 
-<img src="screenshots/cart.png" width = "40%"/> <img src="screenshots/cart.png" width = "40%"/>
+<img src="screenshots/cart.png" width = "40%"/> <img src="screenshots/good01.png" width = "40%"/>
 
 <img src="screenshots/good02.png" width = "40%"/> <img src="screenshots/good-list.png" width = "40%"/>
 
