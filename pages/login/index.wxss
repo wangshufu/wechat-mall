@@ -1,0 +1,36 @@
+/* pages/login/index.wxss */
+
+page{
+    height: 100%;
+    background-color:#f5f5f5;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.container text{
+  margin-left: 40rpx;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.container input{
+  padding: 3rpx 40px 3rpx 40rpx;
+  border-bottom: 1px solid #ededed;
+  border-top: 1px solid #ededed;
+  background-color: #ffffff;
+  height: 80rpx;
+}
+
+.container button{
+  border-radius: 5px;
+  margin-top: 50px;
+  width: 650rpx;
+  height: 80rpx;
+  
+}
+
+

@@ -1,0 +1,76 @@
+<!--pages/good-detail/index.wxml-->
+<view class='container'>
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='desc-container'>
+    <text class='good-desc'>{{goodsDesc}}</text>
+    <text class='good-price'>¥ {{goodsDefaultPrice}}</text>
+  </view>
+  <view class='sku-container'>
+    <text class='sku_state'>已选</text>
+    <text class='sku_decs'>{{goodsDefaultSku}}</text>
+    <image src="/images/icon/icon_gray_more.png" bindtap="showPopupTap"></image>
+  </view>
+
+
+  <view class="footer-box">
+    <view class="contact">
+      <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="27"></contact-button>
+      <view style='position:absolute;bottom:10rpx;'> 客服 </view>
+    </view>
+    <view class="shop-cart-btn" bindtap="goShopCar">
+      <view class="shop-num">({{shopNum}})</view>
+      <view style='position:absolute;bottom:10rpx;'> 购物车 </view>
+    </view>
+    <view class="join-shop-cart" bindtap="addShopCar">加入购物车</view>
+  </view>
+
+  <view class="show-popup" hidden="{{hideShopPopup}}">
+    <view class="popup-mask" bindtap="closePopupTap"></view>
+    <view class="popup-contents">
+      <view class="pop-goods-info">
+        <view class="pop-img-box">
+          <image src="{{popImgUrl}}" class="goods-thumbnail" />
+        </view>
+        <view class="pop-goods-des">
+          <view class="pop-goods-title">{{popTitle}}</view>
+          <view class="pop-goods-price">¥ {{goodsDefaultPrice}}</view>
+        </view>
+        <view class="pop-goods-close" bindtap="closePopupTap"></view>
+      </view>
+
+
+      <view class="size-label-box">
+        <block wx:for="{{goodsSku}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+          <view class="label">{{property.goodsSkuTitle}}</view>
+          <view class="label-item-box">
+            <view class="label-item {{propertyActive[idx].activeId == index ? 'active' : '' }}" wx:for="{{property.skuContent}}" wx:key="id" bindtap="labelItemTap" data-propertyindex="{{idx}}" data-propertyid="{{property.id}}" data-propertyname="{{property.goodsSkuTitle}}" data-propertychildindex="{{index}}"  data-propertychildname="{{property.skuContent[index]}}">
+              {{property.skuContent[index]}}
+            </view>
+          </view>
+        </block>
+      </view>
+
+
+      <view class="buy-num-box">
+        <view class="num-label">购买数量</view>
+        <view class="num-box">
+          <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+          <view class="num-input">
+            <input type="number" value="{{buyNumber}}" disabled/>
+          </view>
+          <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+        </view>
+      </view>
+      <view class="popup-join-btn"  bindtap="addShopCar">
+        加入购物车
+      </view>
+    </view>
+  </view>
+</view>

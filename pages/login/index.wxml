@@ -1,0 +1,12 @@
+<!--pages/login/index.wxml-->
+<view class='container'>
+
+<text>账号</text>
+<input type="text" bindinput="bindAccountInput" placeholder="请输入手机号码" focus="{{true}}"></input>
+
+<text>密码</text>
+<input type="number" bindinput="bindPasswordInput" confirm-type="done" placeholder="请输入密码" password="true"></input>
+
+
+<button type="primary" catchtap='onLogin' disabled="{{disabled}}">登录</button>
+</view>

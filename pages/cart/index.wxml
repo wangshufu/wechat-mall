@@ -1,0 +1,3 @@
+<!--pages/cart/index.wxml-->
+<import src="cart-template/cart-template.wxml" />
+<template is="cartTemplate" data="{{...cartData}}"/>

@@ -1,0 +1,67 @@
+<!--pages/my/index.wxml-->
+<view class='container'>
+
+  <view class='head-container'>
+    <image class='head-container-bg' src='/images/my/bg_me_header.png'></image>
+
+    <view class='head-view' catchtap='onLogin'>
+      <image src="{{userIcon}}"></image>
+      <text>{{userName}}</text>
+
+    </view>
+  </view>
+
+<view class='order-container'>
+
+<view class='order-view' bindtap='goOrderTap' data-order-status="1">
+<image src='/images/my/icon_order_wait_pay.png'></image>
+<text>待付款</text>
+</view>
+
+<view class='order-view' bindtap='goOrderTap' data-order-status="2">
+<image src='/images/my/icon_order_wait_confirm.png'></image>
+<text>待收货</text>
+</view>
+
+<view class='order-view' bindtap='goOrderTap' data-order-status="3">
+<image src='/images/my/icon_order_completed.png'></image>
+<text>已完成</text>
+</view>
+
+<view class='order-view' bindtap='goOrderTap' data-order-status="0">
+<image src='/images/my/icon_order.png'></image>
+<text>我的订单</text>
+</view>
+
+</view>
+
+<view class='item'>
+
+<view class='item-container' catchtap='onAddress'>
+<view class='item-left'>
+<image src='/images/my/icon_address.png'></image>
+<text>收货管理</text>
+</view>
+<image class='item-arrow' src='/images/my/icon_arrow.png'></image>
+</view>
+
+<view class='item-container' catchtap='onShare'>
+<view class='item-left'>
+<image src='/images/my/icon_share.png'></image>
+<text>分享</text>
+</view>
+<image class='item-arrow' src='/images/my/icon_arrow.png'></image>
+</view>
+
+<view class='item-container' catchtap='onSetting'>
+<view class='item-left'>
+<image src='/images/my/icon_setting.png'></image>
+<text>设置</text>
+</view>
+<image class='item-arrow' src='/images/my/icon_arrow.png'></image>
+</view>
+
+</view>
+
+
+</view>

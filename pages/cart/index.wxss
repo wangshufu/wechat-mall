@@ -1,0 +1,8 @@
+/* pages/cart/index.wxss */
+@import "cart-template/cart-template.wxss";
+page {
+  height: 100%;
+  background-color: #fafafa;
+}
+
+

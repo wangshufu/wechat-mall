@@ -1,0 +1,34 @@
+<!--pages/user/index.wxml-->
+<view class='container'>
+<view class='item-container'>
+  <text class='item-title'>头像</text>
+  <text>你好</text>
+</view>
+
+
+<view class='item-container'>
+  <text>昵称</text>
+  <text>你好</text>
+</view>
+
+<view class='item-container'>
+  <text>性别</text>
+  <text>你好</text>
+</view>
+
+<view class='item-container'>
+  <text>头像</text>
+  <text>你好</text>
+</view>
+
+<view class='item-container'>
+  <text>手机</text>
+  <text>你好</text>
+</view>
+
+<view class='item-container'>
+  <text>签名</text>
+  <text>你好</text>
+</view>
+
+</view>

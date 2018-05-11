@@ -1,0 +1,18 @@
+<!--pages/good-list/index.wxml-->
+
+<scroll-view scroll-y="{{true}}" bindscrolltolower="onScrollLower">
+  <view wx:if="{{goodListIsEmpty}}" class="goods-container">
+    <view class="goods-box" wx:for-items="{{goodList}}" wx:key="{{index}}" bindtap="toDetailsTap" data-id="{{item.id}}">
+      <view class="img-box">
+        <image src="{{item.goodsDefaultIcon}}" class="image" mode="aspectFill" lazy-load="true" />
+      </view>
+      <view class="goods-title">{{item.goodsDesc}}</view>
+      <view style='display:flex;'>
+        <view class="goods-price">¥ {{item.goodsDefaultPrice}}</view>
+      </view>
+    </view>
+  </view>
+
+  </scroll-view>
+
+   <view wx:if="{{goodListIsEmpty ? false : true}}" class='goods-empty'>空空如也~~~</view>

@@ -1,0 +1,26 @@
+<!--pages/address/address-list/index.wxml-->
+<view class='items-view'>
+  <block wx:for-items="{{addressData}}" wx:key="id" wx:for-index="index">
+    <view class='item-container'>
+
+      <view class='name-view'>{{item.shipUserName}} {{item.shipUserMobile}}</view>
+      <text class='address-view'>{{item.shipAddress}}</text>
+
+      <view class='item-foot-container'>
+        <checkbox class='checkbox-text' checked='{{item.shipIsDefault == 0 ? true:false}}' bindtap='toItemCheckedTap' data-position="{{index}}">设为默认</checkbox>
+        <view class='edit-delete-container'>
+          <text bindtap='editTap' data-position="{{index}}">编辑</text>
+          <text bindtap='deleteTap' data-position="{{index}}">删除</text>
+        </view>
+
+      </view>
+
+    </view>
+
+  </block>
+
+</view>
+
+<view class="new-btn">
+  <button type='primary' bindtap='createTap'>新建地址</button>
+</view>

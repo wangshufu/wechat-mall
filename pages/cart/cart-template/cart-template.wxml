@@ -1,0 +1,31 @@
+<import src="../cart-item-template/cart-item-template.wxml" />
+<template name="cartTemplate">
+  <view class='cart-list-view'>
+
+    <view class='cart-header-view'>
+
+      <text class='cart-header-left'>福商城</text>
+
+      <text class='cart-header-right' bindtap='onShowEditViewTap'>{{showFinishView ? "完成" : "编辑"}}</text>
+
+    </view>
+    <block wx:for-items="{{cartListData}}" wx:key="{{index}}" >
+      <template is="cartItemTemplate" data="{{cart:item,idx:index}}" />
+    </block>
+  </view>
+
+
+  <view class='foot-order-container'>
+
+    <checkbox class='foot-checkbox' checked='{{isAllSelected}}' bindtap='allSelectTap'>全选</checkbox>
+
+    <text class='foot-total-price'>{{showFinishView ? "":"合计:¥ "+totalPrice}}</text>
+
+    <view class='foot-go' bindtap='goSettleOrDeleteTap'>{{showFinishView ? "删除":"去结算"}}</view>
+
+  </view>
+
+  <view class='empty-container' hidden='{{ cartListData.length > 0}}' >
+      敬请期待~~
+  </view>
+</template>

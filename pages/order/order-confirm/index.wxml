@@ -1,0 +1,48 @@
+<!--pages/order/order-confirm/index.wxml-->
+<view class='order-container'>
+
+  <view class='address-container' bindtap='contactTap'>
+
+    <view>
+      <text wx:if="{{address == null}}">选择联系人</text>
+      <view wx:else class='address-content'>
+        <text class='name-view'>{{address.shipUserName}}  {{address.shipUserMobile}}</text>
+        <text class='address-view'>{{address.shipAddress}}</text>
+      </view>
+
+    </view>
+    <image class='item-arrow' src='/images/my/icon_arrow.png'></image>
+  </view>
+
+  <block wx:for-items="{{orderGoodsList}}" wx:key="index">
+    <view class='item-container'>
+      <image src='{{item.goodsIcon}}'></image>
+
+      <view class='item-right-container'>
+        <text class='item-desc'>{{item.goodsDesc}}</text>
+        <text class='item-sku'>{{item.goodsSku}}</text>
+        <view class='item-right-foot-container'>
+          <text class='item-price'>¥ {{item.goodsPrice}}</text>
+          <text class='item-count'>x{{item.goodsCount}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+
+  <view class='pay-container'>
+    <text class='pay-title'>支付配送</text>
+    <text class='pay-type'>在线支付 \n 快递运输</text>
+  </view>
+
+  <view class='foot-container'>
+
+    <text class='total-view'>合计:¥ {{totalPrice}}</text>
+
+    <view class='submit-view' bindtap='submitOrderTap'>提交订单</view>
+
+  </view>
+
+
+</view>

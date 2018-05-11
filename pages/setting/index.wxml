@@ -1,0 +1,21 @@
+<!--pages/setting/index.wxml-->
+<view class='container'>
+<view class='item-container'>
+  <text>用户协议</text>
+  <image class='item-arrow' src='/images/my/icon_arrow.png'></image>
+</view>
+
+<view class='item-container'>
+  <text>反馈意见</text>
+  <image class='item-arrow' src='/images/my/icon_arrow.png'></image>
+</view>
+
+<view class='item-container'>
+  <text>关于</text>
+  <image class='item-arrow' src='/images/my/icon_arrow.png'></image>
+</view>
+
+<view class="exit-view">
+  <button type='primary' bindtap='exitTap' disabled='{{disabled}}'>退出登录</button>
+</view>
+</view>

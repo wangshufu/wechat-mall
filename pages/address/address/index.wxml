@@ -1,0 +1,26 @@
+<!--pages/address/address/index.wxml-->
+<view class='content-container'>
+
+  <view class='content-item-container'>
+    <text>收货人:</text>
+    <input type="text" bindinput="nameInput" placeholder="姓名" value="{{shipUserName}}"></input>
+  </view>
+
+  <view class='content-item-container'>
+    <text>联系方式:</text>
+    <input maxlength="11" type="number" bindinput="phoneInput" placeholder="11位手机号码" value="{{shipUserMobile}}"></input>
+  </view>
+
+
+  <view class='content-item-container'>
+    <text>收货地址:</text>
+    <input auto-height bindinput="addressInput" placeholder="街道门牌信息"  value="{{shipAddress}}"></input>
+  </view>
+
+
+
+</view>
+
+<view class="new-btn">
+  <button type='primary' bindtap='saveTap' loading="{{isShowLoading}}">保存</button>
+</view>

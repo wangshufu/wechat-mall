@@ -1,0 +1,21 @@
+<template name="cartItemTemplate">
+  <view class='item-container' >
+    <checkbox checked='{{cart.isSelected}}' bindtap='itemCheckboxTap' data-position="{{idx}}"> </checkbox>
+    <image src='{{cart.goodsIcon}}'></image>
+    <view class='item-desc-container'>
+      <text class='item-desc'>{{cart.goodsDesc}}</text>
+      <text class='item-sku'>{{cart.goodsSku}}</text>
+
+      <view class='item-count-container'>
+        <text class='item-price'>¥ {{cart.goodsPrice}}</text>
+        <view class="num-box">
+          <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+          <view class="num-input">
+            <input type="number" value="{{cart.goodsCount}}" disabled/>
+          </view>
+          <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

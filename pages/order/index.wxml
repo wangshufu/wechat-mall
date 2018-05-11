@@ -1,0 +1,53 @@
+<!--pages/order/index.wxml-->
+<view class='container'>
+
+
+  <view class="type-container">
+    <view class="type-box" wx:for-items="{{categories}}" wx:key="id">
+      <view id="{{item.id}}" class="type-navbar-item {{activeCategoryId == item.id ? 'type-item-on' : ''}}" bindtap="tabClick">
+        {{item.categoryName}}
+      </view>
+    </view>
+  </view>
+
+
+  <view class='content-container'>
+
+<block wx:for-items="{{data}}" wx:key="id" wx:for-index="index">
+    <view class='item-container'>
+      <view class='item-header-container'>
+        <text>自营</text>
+        <text wx:if="{{item.orderStatus == 1}}" style="color:red">待支付</text>
+        <text wx:elif="{{item.orderStatus == 2}}">待收货</text>
+        <text wx:elif="{{item.orderStatus == 3}}">已完成</text>
+        <text wx:elif="{{item.orderStatus == 4}}" style="color:#666">已取消</text>
+        <text wx:else>全部</text>
+      </view>
+
+      <view class='item-order-container'>
+        <image src='{{item.orderGoodsList[0].goodsIcon}}'></image>
+        <view class='item-order-right-container'>
+          <text>{{item.orderGoodsList[0].goodsDesc}}</text>
+
+          <view class='item-order-right-count-container'>
+            <text class='item-order-right-count-price'>¥{{item.orderGoodsList[0].goodsPrice}}</text>
+            <text>x{{item.orderGoodsList[0].goodsCount}}</text>
+          </view>
+
+        </view>
+
+      </view>
+      <view class='item-order-total-container'>
+        <text>合计{{item.orderGoodsList.length}}件商品,总价:¥{{item.totalPrice}}</text>
+      </view>
+      <view class='item-order-foot-container'>
+        <text class='item-cancel'>取消订单</text>
+        <text class='item-pay'>去支付</text>
+      </view>
+    </view>
+</block>
+
+
+  </view>
+
+</view>
